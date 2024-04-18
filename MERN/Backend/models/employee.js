@@ -1,17 +1,34 @@
+// // columns: [
+//           { name: "Years", type: "date" },
+//           { name: "Group", type: "string" },
+//           { name: "Quantity", type: "number" },
+//           { name: "Units", type: "number" },
+//           { name: "Returns", type: "number" },
+//       ]
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-let employeeSchema = new Schema({
-    name: {
-        type: String
+let exampleSchema = new Schema(
+  {
+    years: {
+      type: Date,
     },
-    email: {
-        type: String
+    group: {
+      type: String,
     },
-    empId: {
-        type: Number
-    }
-}, {
-    collection: 'employee'
-})
-module.exports = mongoose.model('Employee',employeeSchema)
+    quantity: {
+      type: Number,
+    },
+    units: {
+      type: Number,
+    },
+    returns: {
+      type: Number,
+    },
+  },
+  {
+    collection: "example",
+  }
+);
+module.exports = mongoose.model("Example", exampleSchema);
